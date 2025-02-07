@@ -4,12 +4,20 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
 	const GloobalState = useContext(CartContext);
-	const state = GloobalState.state;
-	const dispatch = GloobalState.dispatch;
+	if (!GloobalState) {
+		return <p>Loading...</p>;
+	}
+
+	const { state, dispatch } = GloobalState;
+
+	if (!Array.isArray(state)) {
+		return <p>No products in the cart.</p>;
+	}
 
 	const total = state.reduce((total, product) => {
 		return total + product.price * product.quantity;
 	}, 0);
+
 	return (
 		<div className="bg-zinc-50 m-5 grid p-5">
 			<h1 className="text-3xl mb-5">Cart Products</h1>
@@ -18,10 +26,18 @@ const Cart = () => {
 				{state.map((product, index) => (
 					<div
 						className="flex justify-between border-gray-400  mb-5 w-[800px] bg-white items-center pr-5"
-						key={index}
+						key={product.id || index}
 					>
 						<div className="flex ">
-							<img className="w-25 h-25 mr-2" src={product.images[0]} alt="" />
+							<img
+								className="w-25 h-25 mr-2"
+								src={
+									product.image && product.image.length > 0
+										? product.image
+										: "fallback-image.jpg"
+								}
+								alt={product.title || "Product Image"}
+							/>
 							<div className="grid gap-1">
 								<p className="text-2xl">{product.title}</p>
 								<p>{product.quantity}</p>
@@ -51,7 +67,7 @@ const Cart = () => {
 						</div>
 						<h2
 							onClick={() => dispatch({ type: "REMOVE", payload: product })}
-							className="text-lg "
+							className="text-lg cursor-pointer text-red-500"
 						>
 							X
 						</h2>
