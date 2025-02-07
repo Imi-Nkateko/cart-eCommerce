@@ -1,8 +1,30 @@
-# React + Vite
+# Shopping-cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+An e-commerce store, imitating a tech store, built with React. Includes dedicated product page and cart page managed by reactr-router-dom and useContext for passing complex state.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+live demo [here]
+
+## Showcase
+
+![app screenshot](src/assets/shopping-cart.png)
+
+## Objectives & Outcomes
+
+The main motivation for this work was:
+
+* to manage complex state with the Context API
+
+* to Fetch data from an API
+
+* to style the application using A CSS framework (Tailwindcss)
+
+* to design and deploy a multiple page application using react router.
+
+## Technologies
+
+* Reactjs
+* Tailwindcss
+* Eslinter
+* react-icons
