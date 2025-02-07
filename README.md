@@ -4,7 +4,7 @@
 
 An e-commerce store, imitating a tech store, built with React. Includes dedicated product page and cart page managed by reactr-router-dom and useContext for passing complex state.
 
-live demo [here]
+live demo [here](https://cart-ecommerce.pages.dev/)
 
 ## Showcase
 
@@ -14,17 +14,17 @@ live demo [here]
 
 The main motivation for this work was:
 
-* to manage complex state with the Context API
+- to manage complex state with the Context API
 
-* to Fetch data from an API
+- to Fetch data from an API
 
-* to style the application using A CSS framework (Tailwindcss)
+- to style the application using A CSS framework (Tailwindcss)
 
-* to design and deploy a multiple page application using react router.
+- to design and deploy a multiple page application using react router.
 
 ## Technologies
 
-* Reactjs
-* Tailwindcss
-* Eslinter
-* react-icons
+- Reactjs
+- Tailwindcss
+- Eslinter
+- react-icons
